@@ -1,6 +1,38 @@
 #include <iostream>
 
 using namespace std; 
+int search(){                                                                 //this is a program to search a number in an array
+	 int numbers[5], i ,search_key;
+
+	cout<<"Simple C++ Example Program for Simple Searching In Array\n";
+
+	// Read Input
+    for (i = 0; i < 5; i++)
+    {
+		cout<<"Enter the Number : "<< (i+1) <<"  : ";
+        cin>>numbers[i];
+    }
+    
+    cout<<"Enter the key\n";
+    cin>>search_key;
+    
+    /*  Simple Search with Position */
+	for (i = 0; i < 5; i++)
+    {
+		if(numbers[i] == search_key)
+		{
+			cout<<"Search Element Found . Position Is :"<< (i+1) <<" \n";
+			break;
+		}
+		if(i == 5 - 1)
+		{
+			cout<<"Search Element is not in Array.\n";
+		}
+    }
+    
+}
+/*.................................................................................*/
+
 int sort(){                                                                       //this is program to sort an array.
 
 	 int numbers[5], i ,j ,temp;
@@ -34,6 +66,8 @@ int sort(){                                                                     
 }
 
 
+/*................................................................*/
+
 int biggestno(){                                                             //Gives the biggest number in an array.
 	 int numbers[5], i, largest;
 
@@ -65,15 +99,18 @@ int main()
              int option=-1;
              while(option)
                {
-                 printf("1.Largest number in array. 2.Sorting an array 3.Exit\n");
+                 printf("1.Largest number in array. 2.Sorting an array 3.Searching a number in aaray 4.Exit\n");
                  printf("Enter your choice :- ");
                  scanf("%d",&choice);
                  switch(choice)
                  {
                    case 1: biggestno() ;
                            break;
-                    case 2: sort();
+                   case 2: sort();
                            break;
+                   case 3: search();
+                           break;
+                           
                    
                  }
                  fflush(stdin);
